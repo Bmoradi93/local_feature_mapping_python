@@ -45,7 +45,14 @@ Now the question is how to find corner points in an image. To answer this questi
 
 ![Selection_224](https://user-images.githubusercontent.com/47978272/147426173-7cc11a46-cca7-4b00-80eb-5ffa50f97635.png)
 
+Now, we need to find the eigenvalues and eigenvectors of the derivative matrix M:
 
+![Selection_225](https://user-images.githubusercontent.com/47978272/147426256-db66ca1e-65fd-4ed6-877e-9a339358e455.png)
 
+using the eigenvalues for each pixel, we can decide which pixel is the corner point. This concept is illustrated in the following figure:
+
+![Selection_226](https://user-images.githubusercontent.com/47978272/147426305-a31b0c1c-8742-42d3-81f1-ed02709f26a8.png)
+
+Having the eigenvalues calculated, we can simply calculate the cornerness of every corner point using the Forstner-Harris equation. with α = 0.06. Unlike eigenvalue analysis, this quantity does not require the use of square roots and yet is still rotationally invariant and also downweights edge-like features.
 
 
